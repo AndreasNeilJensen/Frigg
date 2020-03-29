@@ -64,5 +64,5 @@ decode :: HuffmanTree -> [Char] -> [Char]
 decode huffmanTree = convert huffmanTree
     where   convert (Leaf c _) []           = [c] 
             convert (Leaf c _) bs           = c : convert huffmanTree bs 
-            convert (Branch _ _ _) []       = error "Hans Hüttel would be ashamed!.. You need to use a compatible tree (and/or codestring) when decoding.. duh!" 
+            convert (Branch _ _ _) []       = error "You need to use a compatible tree (and/or codestring) when decoding.. duh!" 
             convert (Branch l r _) (b:bs)   = convert (if b == '0' then l else r) bs 
